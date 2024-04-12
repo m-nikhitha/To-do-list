@@ -15,7 +15,7 @@ function addTask(){
     inputBox.value=""; //clearing the input box
     saveData();
 }
-inputBox.addEventListener("keydown", function(event) {
+inputBox.addEventListener("keydown", function(event) {  //to use keyboard press
     if (event.keyCode === 13) { 
         addTask(); 
     }
