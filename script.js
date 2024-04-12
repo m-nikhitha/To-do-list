@@ -5,18 +5,18 @@ function addTask(){
         alert("You must write something");
     }
     else{
-        let li=document.createElement("li"); //entered text will go into list
-        li.innerHTML=inputBox.value;
-        listContainer.appendChild(li);  //displaying the text into list container
+        let li=document.createElement("li"); //Create a new list item element
+        li.innerHTML=inputBox.value; // Set the content of the list item to the value of the input box
+        listContainer.appendChild(li); // Append the newly created list item to the list container
         let span=document.createElement("span");
         span.innerHTML="\u00d7";
         li.appendChild(span);
     }
-    inputBox.value=""; //clearing the input box
+    inputBox.value=""; //clearing the input box after adding a task and then saving the data
     saveData();
 }
-inputBox.addEventListener("keydown", function(event) {  //to use keyboard press
-    if (event.keyCode === 13) { 
+inputBox.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) { //Call the addTask function when the "Enter" key is pressed
         addTask(); 
     }
 });
@@ -41,6 +41,6 @@ listContainer.addEventListener("click",function(e){
     function showTasks(){ //showing all the tasks
         listContainer.innerHTML=localStorage.getItem("data");
     }
-    showTasks();
+    showTasks(); //Call the showTasks function to display tasks when the page loads
 
     
